@@ -26,27 +26,56 @@
    <script>
    // Exercise 1
    // Add your code here:
-
+   function countWords (s) {
+      let expression = /[a-zA-Z]+/g;
+      let array = s.match(expression);
+      if (s.length === 0 || array == null){ return 0;}
+      return array.length;
+   }
 
 
 
    // Exercise 2
    // Add your code here
-
+   function fix2 (numbers){
+      for(let i = 0; i < numbers.length -1; i= i+1){
+         if (numbers[i] > numbers[i+1]){
+            let temp = numbers[i];
+            numbers[i] = numbers[i+1];
+            numbers[i+1] = temp;
+            return true;
+         }
+      }
+      return false;
+   }
 
 
 
 
    // Exercise 3
    // Add your code here
-
-
+   function computeTotal(arr) {
+      if (arr.length === 0){return 0;}
+      let total = 0;
+      for (let i = 0; i < arr.length; i = i+1){
+         total = total + (arr[i].quantity*arr[i].price);
+      }
+      return total;
+   }
 
 
 
    // Exercise 4
    // Add your code here
-
+   function surroundMatches(string,expression){
+      builtString = "";
+      let array = string.match(expression);
+      for(let item in array){
+         builtString = builtString + ("<span class='matched'>" + array[item] + "</span> ");
+         
+      }
+      return builtString;
+   }
 
 
 
