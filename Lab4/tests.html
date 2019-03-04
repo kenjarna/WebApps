@@ -9,10 +9,11 @@
    <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
    <script>mocha.setup('bdd');</script>
 <!-- Add your own script files here -->
-   <script type="module" src="test/example.spec.js"></script>
-   <script type="module" src="test/observable.spec.js"></script>
+   <script  type="module" src="./test/example.spec.js"></script>
+   <script  type="module" src="./test/score.spec.js"></script>
+   <script  type="module" src="./test/observable.spec.js"></script>
    <script type="module">
-      mocha.checkLeaks();
+      //mocha.checkLeaks();
       mocha.run();
   </script>
 </body>
