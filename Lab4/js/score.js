@@ -1,9 +1,6 @@
 export default class Score {
 	constructor(){
-		this.switchWins = 0;
-		this.switchLosses = 0;
-		this.stayWins = 0;
-		this.stayLosses = 0;
+		this.reset();
 	}
 	addResult(action, result){
 		if (action == Score.ACTION_SWITCH) {
@@ -20,6 +17,12 @@ export default class Score {
 				this.stayLosses +=1;
 			}
 		}
+	}
+	reset(){
+		this.switchWins = 0;
+		this.switchLosses = 0;
+		this.stayWins = 0;
+		this.stayLosses = 0;
 	}
 };
 

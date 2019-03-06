@@ -18,6 +18,14 @@ describe('Score Instances', () => {
 		checkValuesAre(1,1,1,1);
 
 	});
+	it('set all counters to 0 using reset method', ()=>{
+		score.addResult(Score.ACTION_SWITCH, Score.RESULT_WIN);
+		score.addResult(Score.ACTION_SWITCH, Score.RESULT_LOSS);
+		score.addResult(Score.ACTION_STAY, Score.RESULT_WIN);
+		score.addResult(Score.ACTION_STAY, Score.RESULT_LOSS);
+		score.reset();
+		checkValuesAre(0,0,0,0);
+	});
 	function checkValuesAre(switchWins,switchLosses,stayWins,stayLosses) {
 		expect(score.switchWins).to.equal(switchWins);
 		expect(score.switchLosses).to.equal(switchLosses);
