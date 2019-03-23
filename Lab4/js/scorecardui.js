@@ -1,9 +1,14 @@
-export default class ScorecardUI {
+import Observable from './observable.js';
+
+export default class ScorecardUI extends Observable{
 	constructor($el){
+		super();
 		this.$el = $el;
 	}
 	initialize(o) {
     	this.$el.html(template(o));
+    	this.$el.find("#resetButton")
+    		.on("click", () => this.trigger("resetRequested"));
 	}
 	update(field, newValue) {
 	   let $inputEl = this.$el.find("#" + field);

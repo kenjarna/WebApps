@@ -6,3 +6,4 @@ scorecard.initialize({
 });
 
 scorecard.update("switchLosses", 3 + 1);
+scorecard.on("resetRequested", () => console.log("Reset called!"));
