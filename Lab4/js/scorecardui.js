@@ -5,6 +5,11 @@ export default class ScorecardUI {
 	initialize(o) {
     	this.$el.html(template(o));
 	}
+	update(field, newValue) {
+	   let $inputEl = this.$el.find("#" + field);
+	   $inputEl.val(newValue);
+	   highlight($inputEl);
+	}
 }
 
 function template(o) {
@@ -27,4 +32,11 @@ function template(o) {
 		   </label>
 		</div>
 		`;
+}
+
+function highlight(el) {
+   let currentColor = el.css('background-color');
+   let targetColor = "#f47142";
+   el.css('background-color', targetColor);
+   setTimeout(() => el.css('background-color', currentColor), 1000);
 }
