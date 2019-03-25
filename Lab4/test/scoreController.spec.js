@@ -47,7 +47,9 @@ describe('ScoreController instances', () => {
 	   expect(spy.numberOfCalls()).to.equal(1);
 	});
 	it('call the model reset method when the ui triggers resetRequested', (done) => {
-	   	let spy = new Spy(score, 'reset', done());
+	   	let spy = new Spy(score, 'reset', ()=>{
+	   		done();
+	   	});
 	   	ui.trigger('resetRequested');
 	});
 });

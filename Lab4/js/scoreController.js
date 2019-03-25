@@ -4,7 +4,7 @@ export default class ScorecardController {
 	    this.ui = ui;
 	    this.ui.initialize(score);
 	    this.score.on('change', (property, value) => this.modelChanged(property, value));
-	    this.ui.on(() => this.resetRequested());
+	    this.ui.on('resetRequested',() => this.resetRequested());
 	}
 
 	modelChanged(property, value) {
